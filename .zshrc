@@ -18,3 +18,6 @@ plugins=(
     )
 
 source $ZSH/oh-my-zsh.sh
+
+export EDITOR='code -w'
+export TERM=xterm-256color

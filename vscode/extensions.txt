@@ -1,0 +1,5 @@
+Extensions installed on WSL: Ubuntu:
+esbenp.prettier-vscode
+github.copilot
+github.copilot-chat
+github.vscode-pull-request-github

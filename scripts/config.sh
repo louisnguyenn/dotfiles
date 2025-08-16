@@ -12,9 +12,20 @@ if ! command -v starship &> /dev/null; then
     curl -sS https://starship.rs/install.sh | sh
 fi
 
-# Install zsh plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# Install zsh plugins (only if they don't exist)
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+else
+    echo "zsh-autosuggestions already installed"
+fi
+
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
+    echo "Installing zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+else
+    echo "zsh-syntax-highlighting already installed"
+fi
 
 # Create symlinks
 mkdir -p ~/.config ~/bin
@@ -25,4 +36,4 @@ ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/config/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/scripts/config.sh ~/bin/config
 
-echo "Run 'source ~/.zshrc' to load your configuration."
+echo "Setup completed. Run 'source ~/.zshrc' to load your configuration."

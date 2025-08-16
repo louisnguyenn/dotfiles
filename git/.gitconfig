@@ -1,7 +1,5 @@
 [user]
 	name = Louis Nguyen
 	email = louis.nguyen550@gmail.com
-[credential]
-	helper = store
 [init]
     defaultBranch = main

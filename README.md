@@ -1,5 +1,5 @@
 # My Dotfiles and Config Files
-Personal configuration files for development environment setup.
+Personal configuration files for my development environment.
 
 ## Requirements
 - Zsh

@@ -2,12 +2,21 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
 
-# Minimal Spaceship config
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    )
+
+source $ZSH/oh-my-zsh.sh
+
+# Spaceship configuration
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   host          # Hostname section
   dir           # Current directory section
   git           # Git section
+  line_sep      # Line separator
   char          # Prompt character
 )
 
@@ -20,7 +29,9 @@ SPACESHIP_HOST_SUFFIX=" "
 SPACESHIP_DIR_PREFIX=""
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_CHAR_SYMBOL="➜ "
+SPACESHIP_LINE_SEP_SHOW=true
 
+# Pure CONFIG
 # fpath+=($HOME/.zsh/pure)
 # autoload -U promptinit; promptinit
 # prompt pure
@@ -29,14 +40,6 @@ SPACESHIP_CHAR_SYMBOL="➜ "
 # PS1='%F{cyan}%n@%m%f '$PS1
 # PURE_PROMPT_NEWLINE_BEFORE_MULTILINE=0
 # PURE_PROMPT_MULTILINE=0
-
-plugins=(
-    git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    )
-
-source $ZSH/oh-my-zsh.sh
 
 export EDITOR='code -w'
 export TERM=xterm-256color

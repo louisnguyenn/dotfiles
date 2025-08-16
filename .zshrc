@@ -11,6 +11,10 @@ PS1='%F{cyan}%n@%m%f '$PS1
 PURE_PROMPT_NEWLINE_BEFORE_MULTILINE=0
 PURE_PROMPT_MULTILINE=0
 
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    )
 
 source $ZSH/oh-my-zsh.sh

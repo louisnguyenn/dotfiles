@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # VS Code configuration
-echo "Setting up VS Code with settings.json..."
-rm -f /mnt/c/Users/louis/AppData/Roaming/Code/User/settings.json
-ln -sf ~/dotfiles/vscode/settings.json /mnt/c/Users/louis/AppData/Roaming/Code/User/settings.json
+# echo "Setting up VS Code with settings.json..."
+# rm -f /mnt/c/Users/louis/AppData/Roaming/Code/User/settings.json
+# ln -sf ~/dotfiles/vscode/settings.json /mnt/c/Users/louis/AppData/Roaming/Code/User/settings.json
 
 # Install extensions (optional)
 # if [ -f ~/dotfiles/vscode/extensions.txt ]; then

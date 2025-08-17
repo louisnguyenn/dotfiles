@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# VS Code configuration
+echo "Setting up VS Code with settings.json..."
+rm -f /mnt/c/Users/louis/AppData/Roaming/Code/User/settings.json
+ln -sf ~/dotfiles/vscode/settings.json /mnt/c/Users/louis/AppData/Roaming/Code/User/settings.json
+
+# Install extensions (optional)
+# if [ -f ~/dotfiles/vscode/extensions.txt ]; then
+#     echo "Installing VS Code extensions..."
+#     cat ~/dotfiles/vscode/extensions.txt | xargs -n 1 code --install-extension
+# fi
+
 # Install Oh My Zsh (if not already installed)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Installing Oh My Zsh..."

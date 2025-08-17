@@ -6,6 +6,8 @@ Personal configuration files for my development environment.
 - Git
 - curl (for installations)
 
+Note: This will not work on Windows Powershell, it has to be on WSL (Linux Environment for Windows) or MacOS with terminals Bash or Zsh.
+
 ## To Setup on a New System
 
 ### 1. Clone this repository:

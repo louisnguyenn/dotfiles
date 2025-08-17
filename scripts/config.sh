@@ -43,7 +43,6 @@ mkdir -p ~/.config ~/bin
 
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/config/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/scripts/config.sh ~/bin/config
 

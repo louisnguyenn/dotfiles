@@ -1,12 +1,12 @@
 # My Dotfiles and Config Files
-Personal configuration files for my development environment.
+My personal dotfiles and configuration files for my development environment.
 
 ## Requirements
 - Zsh
 - Git
 - curl (for installations)
 
-Note: This will not work on Windows Powershell, it has to be on WSL (Linux Environment for Windows) or MacOS with terminals Bash or Zsh.
+Note: This will not work on Windows Powershell or Windows Terminal. If you are on Windows, you must install WSL/Ubuntu (Linux Environment for Windows) and switch to the Zsh terminal to install my terminal theme and plugins (For MacOS, Zsh is already the default terminal).
 
 ## To Setup on a New System
 

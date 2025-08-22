@@ -40,3 +40,11 @@ alias gp='git push'
 alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
+
+# NPM Package aliases
+alias ni="npm install"
+alias nu="npm uninstall"
+alias nup="npm update"
+alias nrs="npm run start"
+alias nrd="npm run dev"
+alias nrb="npm run build"

@@ -1,0 +1,61 @@
+{
+	"security.workspace.trust.untrustedFiles": "open",
+	"code-runner.runInTerminal": true,
+	"files.autoSave": "afterDelay",
+	"dart.flutterSdkPath": "C:\\Users\\louis\\Downloads\\flutter",
+	"git.autofetch": true,
+	"terminal.integrated.profiles.windows": {
+		"PowerShell": {
+			"source": "PowerShell",
+			"icon": "terminal-powershell"
+		},
+		"Command Prompt": {
+			"path": [
+				"${env:windir}\\Sysnative\\cmd.exe",
+				"${env:windir}\\System32\\cmd.exe"
+			],
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Git Bash": {
+			"source": "Git Bash"
+		},
+		"Ubuntu (WSL)": {
+			"path": "C:\\WINDOWS\\System32\\wsl.exe",
+			"args": ["-d", "Ubuntu", "--login", "-c", "zsh"]
+		}
+	},
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorBlinking": "phase",
+	"editor.wordWrap": "on",
+	"prettier.printWidth": 80,
+	"prettier.useTabs": true,
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": false,
+	"prettier.trailingComma": "es5",
+	"prettier.proseWrap": "always",
+	"prettier.singleAttributePerLine": true,
+	"javascript.preferences.quoteStyle": "double",
+	"typescript.preferences.quoteStyle": "double",
+	"workbench.colorTheme": "morgan.codes",
+	"editor.tabSize": 2,
+	"editor.fontSize": 13
+}

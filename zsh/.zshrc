@@ -15,13 +15,9 @@ eval "$(starship init zsh)"
 export EDITOR='code -w'
 export TERM=xterm-256color
 
-#
+# -----------
 # Aliases
-#
-
-#
-# Command line aliases
-#
+# -----------
 
 # Directory navigation
 alias ..='cd ..'
@@ -42,6 +38,7 @@ alias gs='git status'
 alias ga='git add'
 alias gaa='git add .'
 alias gc='git commit'
+alias gcm='git commit -m'
 alias gca='git commit -am'
 alias gp='git push'
 alias gpl='git pull'

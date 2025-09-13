@@ -1,61 +1,92 @@
 {
-	"security.workspace.trust.untrustedFiles": "open",
-	"code-runner.runInTerminal": true,
-	"files.autoSave": "afterDelay",
-	"dart.flutterSdkPath": "C:\\Users\\louis\\Downloads\\flutter",
-	"git.autofetch": true,
-	"terminal.integrated.profiles.windows": {
-		"PowerShell": {
-			"source": "PowerShell",
-			"icon": "terminal-powershell"
-		},
-		"Command Prompt": {
-			"path": [
-				"${env:windir}\\Sysnative\\cmd.exe",
-				"${env:windir}\\System32\\cmd.exe"
-			],
-			"args": [],
-			"icon": "terminal-cmd"
-		},
-		"Git Bash": {
-			"source": "Git Bash"
-		},
-		"Ubuntu (WSL)": {
-			"path": "C:\\WINDOWS\\System32\\wsl.exe",
-			"args": ["-d", "Ubuntu", "--login", "-c", "zsh"]
-		}
-	},
-	"terminal.integrated.defaultProfile.windows": "PowerShell",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.formatOnSave": true,
-	"workbench.iconTheme": "material-icon-theme",
-	"github.copilot.enable": {
-		"*": false,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"terminal.integrated.defaultProfile.linux": "zsh",
-	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.cursorBlinking": "phase",
-	"editor.wordWrap": "on",
-	"prettier.printWidth": 80,
-	"prettier.useTabs": true,
-	"prettier.semi": true,
-	"prettier.singleQuote": true,
-	"prettier.jsxSingleQuote": false,
-	"prettier.trailingComma": "es5",
-	"prettier.proseWrap": "always",
-	"prettier.singleAttributePerLine": true,
-	"javascript.preferences.quoteStyle": "double",
-	"typescript.preferences.quoteStyle": "double",
-	"workbench.colorTheme": "morgan.codes",
-	"editor.tabSize": 2,
-	"editor.fontSize": 13
+  "security.workspace.trust.untrustedFiles": "open",
+  "code-runner.runInTerminal": true,
+  "files.autoSave": "afterDelay",
+  "dart.flutterSdkPath": "C:\\Users\\louis\\Downloads\\flutter",
+  "git.autofetch": true,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu", "--login", "-c", "zsh"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "phase",
+  "editor.wordWrap": "on",
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": false,
+  "prettier.trailingComma": "es5",
+  "prettier.proseWrap": "always",
+  "prettier.singleAttributePerLine": true,
+  "javascript.preferences.quoteStyle": "double",
+  "typescript.preferences.quoteStyle": "double",
+  "editor.tabSize": 4,
+  "editor.fontSize": 13,
+  "breadcrumbs.enabled": false,
+  "remote.SSH.remotePlatform": {
+    "linux.socs.uoguelph.ca": "linux"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.sortImports": "explicit"
+  },
+  "editor.linkedEditing": true,
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
+  "workbench.colorTheme": "Kitty VSCode Theme",
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "workbench.iconTheme": "a-file-icon-vscode",
+  "workbench.productIconTheme": "material-product-icons",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+  "terminal.integrated.fontSize": 13
 }

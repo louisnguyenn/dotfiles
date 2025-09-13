@@ -1,12 +1,19 @@
-# My Dotfiles and Config Files
+# My Dotfiles
 My personal dotfiles and configuration files for my development environment.
+
+## 🛍️ About my configuration
+Here are some unique features of my configuration
+
+- **👨‍💻 VSCode**: A fully declarative VS Code configuration. The final `settings.json` file is copied (not linked), allowing for quick on-the-fly tweaks. 
+
+- **💻 Terminal**: A zsh shell Starship terminal with Nerd Font for a decorative and fast coding experience.
 
 ## Requirements
 - Zsh
 - Git
 - curl (for installations)
 
-Note: This will not work on Windows Powershell or Windows Terminal. If you are on Windows, you must install WSL/Ubuntu (Linux Environment for Windows) and switch to the Zsh terminal to install my terminal theme and plugins (For MacOS, Zsh is already the default terminal).
+Note: If you are on Windows, you must install WSL/Ubuntu (Linux Environment for Windows) and switch to the Zsh terminal to install my dotfiles.
 
 ## To Setup on a New System
 

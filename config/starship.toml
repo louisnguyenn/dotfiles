@@ -1,18 +1,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Inserts a blank line between shell prompts
-add_newline = true
-
-# Two-line prompt for readability
-[line_break]
-disabled = false
-
 # Show username and hostname
 [username]
-show_always = true
-format = "[$user]($style)@"
+# show_always = true
+# format = "[$user]($style)@"
 
 [hostname]
-ssh_only = false
-format = "[$hostname]($style) "
+# ssh_only = false
+# format = "[$hostname]($style)"

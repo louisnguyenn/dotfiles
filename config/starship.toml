@@ -15,21 +15,22 @@ $time\
 $line_break\
 $character"""
 
-[username] 
-format = "[$user]($style)" 
-show_always = true 
-style_user = "bold blue" 
-style_root = "bold purple" 
+# [username] 
+# format = "[$user]($style)" 
+# show_always = true 
+# style_user = "bold blue" 
+# style_root = "bold purple" 
 
-[hostname] 
-format = "@[$hostname]($style) " 
-ssh_only = false 
-style = "bold cyan"
+# [hostname] 
+# format = "@[$hostname]($style) " 
+# ssh_only = false 
+# style = "bold #f57800"
 
 [directory]
 truncation_length = 0
 truncate_to_repo = false
-format = "[in ](white)[$path](bold #f57800)($style)[$read_only]($read_only_style) "
+# format = "[in ](white)[$path](bold #87D3F8)($style)[$read_only]($read_only_style) "
+format = "[$path](bold #87D3F8)($style)[$read_only]($read_only_style) "
 
 [fill]
 symbol = " "

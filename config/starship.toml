@@ -1,23 +1,83 @@
 add_newline = false
 
+format = """
+$battery\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$cmd_duration\
+$fill\
+$time\
+$line_break\
+$character"""
+
+[username] 
+format = "[$user]($style)" 
+show_always = true 
+style_user = "bold blue" 
+style_root = "bold purple" 
+
+[hostname] 
+format = "@[$hostname]($style) " 
+ssh_only = false 
+style = "bold cyan"
+
 [directory]
 truncation_length = 0
 truncate_to_repo = false
-format = "[$path](bold #f57800)($style)[$read_only]($read_only_style) "
+format = "[in ](white)[$path](bold #f57800)($style)[$read_only]($read_only_style) "
 
-[username]
-format = "[$user](bold blue)[ @ ](bold #f57800)"
+[fill]
+symbol = " "
+
+# [cmd_duration]
+# min_time = 100
+# format = "[took](bold yellow) [$duration](bold green)"
+
+[time]
 disabled = false
-show_always = true
+format = "[$time](bold white)"
+time_format = "%H:%M:%S"
 
 [character]
 error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](purple)"
-
-[cmd_duration]
-min_time = 100
-format = "[took](bold yellow) [$duration](bold green)"
 
 [git_branch]
 symbol = " "
 format = "[on ](white)[$symbol$branch]($style) "
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+conflicted = "⚡"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+up_to_date = "✓"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+
+[git_metrics]
+disabled = false
+added_style = "bold green"
+deleted_style = "bold red"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '

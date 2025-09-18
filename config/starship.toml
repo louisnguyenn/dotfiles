@@ -18,33 +18,29 @@ $character\
 
 [username] 
 format = "[$user]($style)" 
-show_always = true 
-style_user = 'bold #73daca'
-style_root = 'bold #73daca'
+show_always = true
+style_user = 'bold #94e2d5'
+style_root = 'bold #94e2d5'
 
-[hostname] 
+[hostname]
+style = 'bold #b4befe'
 format = "[@$hostname ]($style) " 
 ssh_only = false 
-style = 'bold #73daca'
 
 [directory]
 truncation_length = 6
-truncation_symbol = ' ' # nf-fa-folder_open
 truncate_to_repo = false
-style = 'bold #7aa2f7'
 read_only = ' 󰌾 ' # nf-md-lock
-read_only_style = 'bold #f7768e'
-format = '[$path]($style)[$read_only]($read_only_style)'
+style = 'bold #89b4fa'
+format = '[$path  ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 symbol = ' '
 truncation_length = 4
 truncation_symbol = ''
-style = 'bold #7aa2f7'
-format = '[  $symbol$branch(:$remote_branch)]($style)' # nf-pl-left_soft_divider
+format = '[$symbol$branch(:$remote_branch)]($style)' # nf-pl-left_soft_divider
 
 [git_status]
-style = 'bold #e0af68'
 conflicted = '='
 ahead = '⇡${count}'
 behind = '⇣${count}'
@@ -68,7 +64,6 @@ symbol = ' '
 
 [conda]
 symbol = ' ' # nf-dev-python
-style = '#9ece6a'
 format = '[ $symbol$environment ]($style)'
 ignore_base = false
 

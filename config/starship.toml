@@ -1,84 +1,103 @@
 add_newline = false
 
 format = """
-$battery\
 $username\
 $hostname\
 $directory\
 $git_branch\
-$git_state\
 $git_status\
 $git_metrics\
-$cmd_duration\
 $fill\
+$cmd_duration\
 $time\
+$conda\
+$python\
 $line_break\
-$character"""
+$character\
+"""
 
-# [username] 
-# format = "[$user]($style)" 
-# show_always = true 
-# style_user = "bold blue" 
-# style_root = "bold purple" 
+[username] 
+format = "[$user]($style)" 
+show_always = true 
+style_user = 'fg:#73daca bg:#1a1b26'
+style_root = 'fg:#73daca bg:#1a1b26'
 
-# [hostname] 
-# format = "@[$hostname]($style) " 
-# ssh_only = false 
-# style = "bold #f57800"
+[hostname] 
+format = "[@$hostname ]($style) " 
+ssh_only = false 
+style = 'fg:#73daca bg:#1a1b26'
 
 [directory]
-truncation_length = 0
+truncation_length = 6
+truncation_symbol = ' ' # nf-fa-folder_open
 truncate_to_repo = false
-# format = "[in ](white)[$path](bold #87D3F8)($style)[$read_only]($read_only_style) "
-format = "[$path](bold #87D3F8)($style)[$read_only]($read_only_style) "
+style = 'fg:#7aa2f7 bg:#1a1b26'
+read_only = ' 󰌾 ' # nf-md-lock
+read_only_style = 'fg:#f7768e bg:#1a1b26'
+format = '[$path]($style)[$read_only]($read_only_style)'
+
+[git_branch]
+symbol = ' ' # nf-fa-github_alt, nf-fa-code_fork
+truncation_length = 4
+truncation_symbol = ''
+style = 'fg:#7aa2f7 bg:#1a1b26'
+format = '[  $symbol$branch(:$remote_branch)]($style)' # nf-pl-left_soft_divider
+
+[git_status]
+style = 'fg:#e0af68 bg:#1a1b26'
+conflicted = '='
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕'
+up_to_date = '✓'
+untracked = '?'
+stashed = '$'
+modified = '!${count}'
+renamed = '»'
+deleted = '✘'
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[git_metrics]
+added_style = 'fg:#9ece6a bg:#1a1b26'
+deleted_style = 'fg:#f7768e bg:#1a1b26'
+format = '([+$added]($added_style)/[-$deleted]($deleted_style))'
+disabled = false
 
 [fill]
-symbol = " "
+symbol = ' '
 
-# [cmd_duration]
-# min_time = 100
-# format = "[took](bold yellow) [$duration](bold green)"
+[conda]
+symbol = ' ' # nf-dev-python
+style = 'fg:#9ece6a bg:#1a1b26'
+format = '[ $symbol$environment ]($style)'
+ignore_base = false
+
+[python]
+symbol = ' ' # nf-dev-python
+format = '[ ${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+pyenv_version_name = false
+style = 'fg:#1a1b26 bg:#9ece6a'
+
+[character]
+success_symbol = '[❯](bold #9ece6a)'
+error_symbol = '[❯](bold red)'
+
+[cmd_duration]
+min_time = 1
+style = 'fg:#e0af68'
+format = "[   $duration]($style)" # nf-pl-right_soft_divider, nf-mdi-clock
+
+[lua]
+symbol = "" # nf-seti-lua
+format = '[  $symbol $version](blue)' # nf-pl-right_soft_divider
+
+[golang]
+symbol = "" # nf-dev-rust
+format = '[  $symbol $version](red)' # nf-pl-right_soft_divider
 
 [time]
 disabled = false
-format = "[$time](bold white)"
-time_format = "%H:%M:%S"
-
-[character]
-error_symbol = "[❯](red)"
-
-[git_branch]
-symbol = " "
-format = "[on ](white)[$symbol$branch]($style) "
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bold red"
-conflicted = "⚡"
-ahead = "⇡"
-behind = "⇣"
-diverged = "⇕"
-up_to_date = "✓"
-untracked = "?"
-stashed = "$"
-modified = "!"
-staged = "+"
-renamed = "»"
-deleted = "✘"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
-rebase = "REBASING"
-merge = "MERGING"
-revert = "REVERTING"
-cherry_pick = "CHERRY-PICKING"
-bisect = "BISECTING"
-am = "AM"
-am_or_rebase = "AM/REBASE"
-
-[git_metrics]
-disabled = false
-added_style = "bold green"
-deleted_style = "bold red"
-format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+style = 'fg:#73daca'
+format = '[   $time]($style)' # nf-pl-right_soft_divider, nf-fa-clock_o
+time_format = '%T'
+utc_time_offset = '+9'

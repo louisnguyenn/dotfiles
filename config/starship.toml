@@ -1,105 +1,176 @@
 format = """
-[░▒▓](#6c7086)\
-$os\
-[](bg:#89dceb fg:#6c7086)\
+$username\
+$hostname\
 $directory\
-[](bg:#585b70 fg:#89dceb)\
 $git_branch\
 $git_status\
-[](bg:#45475a fg:#585b70)\
-[](bg:#313244 fg:#45475a)\
-[](fg:#313244)\
-
-$fill\
-
-[](fg:#313244)\
-[](bg:#313244 fg:#45475a)\
-[](bg:#45475a fg:#585b70)\
-[](bg:#585b70 fg:#6c7086)\
-$time\
-[▓▒░](#6c7086)\
+$git_metrics\
 $line_break\
-$character\
-"""
+$character"""
 
-add_newline = true
+add_newline = false
 
-[os]
-format = "[ $symbol ]($style)"
-style = "bg:#6c7086 fg:#89dceb"
-disabled = false
+[package]
+symbol = "󰏗 "
+disabled = true
 
-[os.symbols]
-Alpine = " "
-Amazon = " "
-Android = " "
-Arch = "󰣇 "
-CentOS = " "
-Debian = " "
-EndeavourOS = " "
-Fedora = "󰣛 "
-FreeBSD = "󰣠 "
-Garuda = " "
-Gentoo = "󰣨 "
-Linux = "󰌽 "
-Macos = "󰀵 "
-Manjaro = "󱘊 "
-Mariner = "󰌽 "
-Mint = "󰣭 "
-NetBSD = "󰌽 "
-NixOS = "󱄅 "
-OpenBSD = " "
-OpenCloudOS = "󰅡 "
-openEuler = "󰌽 "
-openSUSE = " "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-Solus = " "
-SUSE = " "
-Ubuntu = " "
-Unknown = "󱔢 "
-Void = " "
-Windows = "󰖳 "
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) in "
+style = "bold blue"
+ssh_symbol = " "
 
 [directory]
-format = "[ $path ]($style)"
-style = "bg:#89dceb fg:#1e1e2e"
-truncation_length = 3
-truncation_symbol = ".../"
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " 󰌾"
+home_symbol = "~"
+truncate_to_repo = false
 
-[directory.substitutions]
-"Documents" = "󱧶 "
-"Downloads" = "󰉍 "
-"Music" = "󱍙 "
-"Pictures" = "󰉏 "
-
-[git_branch]
-format = "[  $symbol $branch ]($style)"
-style = "bg:#585b70 fg:#89dceb"
-symbol = " "
-
-[git_status]
-format = "[ $all_status$ahead_behind ]($style)"
-style = "bg:#585b70 fg:#89dceb"
-
-#------------------------------#
-
-[fill]
-symbol = " "
-
-#------------------------------#
-
-[time]
+[username]
+style_user = "bold yellow"
+style_root = "bold green"
+format = "[$user]($style) on "
 disabled = false
-time_format = "%T" # Hour:Minute Format
-style = "bg:#6c7086"
-format = "[  $time ]($style)"
-
-#------------------------------#
+show_always = true
 
 [character]
-format = "[ $symbol ](bold)"
-success_symbol = "[ ❯ ](bold fg:#89dceb)"
-error_symbol = "[ ❯ ](bold fg:#f38ba8)"
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+
+[git_metrics]
+added_style = 'bold green'
+deleted_style = 'bold red'
+format = '[+$added]($added_style)[/](bold white)[-$deleted]($deleted_style)'
+disabled = false
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = "  "
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

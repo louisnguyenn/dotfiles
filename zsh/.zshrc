@@ -19,7 +19,7 @@ export TERM=xterm-256color
 # Aliases
 # -----------
 
-# Directory navigation
+# Directory
 alias ..='cd ..'
 alias ~='cd ~'
 alias desktop="cd ~/Desktop"
@@ -32,27 +32,43 @@ alias l='ls -CF'
 alias c='clear'
 alias h='history'
 
-# Git aliases
+# Git
 alias gi='git init'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add .'
 alias gc='git commit'
 alias gcm='git commit -m'
-alias gca='git commit -am'
+alias gcam='git commit -am'
 alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
+alias gl='git log'
 alias gb='git branch'
 alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gm='git merge'
+alias gr='git remote -v'
 
-# NPM Package aliases
+# NPM Package aliases / Development
 alias ni="npm install"
 alias nu="npm uninstall"
 alias nup="npm update"
 alias nrs="npm run start"
 alias nrd="npm run dev"
 alias nrb="npm run build"
+alias code='code .'
+
+# Docker
+alias d='docker'
+alias dc='docker-compose'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias di='docker images'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias dstop='docker stop $(docker ps -a -q)'
+alias dclean='docker system prune -f'
 
 # Other
 alias reload='source ~/.zshrc'

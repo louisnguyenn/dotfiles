@@ -1,285 +1,149 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-palette = 'pastel_brite'
-# [pastel, pastel_brite, catppuccin_mocha]
-
-format = """
-[╭](gray)\
-[](bg0)\
-$os\
-$username\
-[](fg:bg0 bg:bg1)\
-$directory\
-[](fg:bg1 bg:bg2)\
-$git_branch\
-$git_status\
-[](fg:bg2 bg:bg3)\
-$c\
-$cpp\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
-$java\
-$julia\
-$kotlin\
-$nodejs\
-$nim\
-$php\
-$python\
-$rust\
-$scala\
-[](fg:bg3 bg:bg4)\
-$conda\
-$docker_context\
-$pixi\
-[](fg:bg4 bg:bg5)\
-$time\
-[](fg:bg5)\
-$cmd_duration\
-$line_break\
-[╰](gray)\
-$character
-"""
-
-[username]
-disabled = false
-show_always = true
-style_user = "bg:bg0 fg:text"
-style_root = "bg:bg0 fg:text"
-# symbol = "󰀄"
-format = '[$user ]($style)'
-
-[os]
-disabled = false
-style = "bg:bg0 fg:text"
-
-[os.symbols]
-Windows = "  "
-Ubuntu = " 󰕈 "
-SUSE = "  "
-Raspbian = " 󰐿 "
-Mint = " 󰣭 "
-Macos = " 󰀵 "
-Manjaro = "  "
-Linux = " 󰌽 "
-Gentoo = " 󰣨 "
-Fedora = " 󰣛 "
-Alpine = "  "
-Amazon = "  "
-Android = "  "
-Arch = " 󰣇 "
-Artix = " 󰣇 "
-CentOS = "  "
-Debian = " 󰣚 "
-Redhat = " 󱄛 "
-RedHatEnterprise = " 󱄛 "
-
-[directory]
-disabled = false
-style = "bg:bg1 fg:text"
-# home_symbol = ""
-format = "[  $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-
-# Shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
-# [directory.substitutions]
-# "/Documents" = "/󰈙 "
-# "/Downloads" = "/ "
-# "/Music" = "/ "
-# "/Pictures" = "/ "
-# "/Videos" = "/ "
-# "/Audios" = "/ "
-# "/GitHub" = "/ "
-# "/.config" = "/ "
-# "/Develop" = "/󰲋 "
-# Keep in mind that the order matters. For example:
-# "/Important Documents" = "/󰈙 "
-# will not be replaced, because "/Documents" was already substituted before.
-# So either put "/Important Documents" before "/Documents" or use the substituted version:
-# "/Important 󰈙 " = "/󰈙 "
+command_timeout = 1000
+right_format = """$time"""
 
 [time]
 disabled = false
-time_format = "%R"
-style = "bg:bg5 fg:text"
-format = '[  $time ]($style)'
+style = "#939594"
+format = "[$time]($style)"
 
-[cmd_duration]
-disabled = false
-show_milliseconds = true
-show_notifications = true
-min_time = 100
-min_time_to_notify = 45000
-format = "[  in $duration ]($style)"
-style = "fg:lavender"
+[aws]
+style = "bg:#f9a600 fg:black"
+symbol = "☁ "
+format = "[](fg:black bg:#f9a600)[$symbol$profile]($style)[](fg:#f9a600 bg:black)"
 
 [character]
-disabled = false
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
+success_symbol = "[❯](#ff9400)"
+error_symbol = "[✗](#ff4b00)"
 
-[git_branch]
-symbol = ""
-style = "bg:bg2 fg:text"
-format = '[ $symbol $branch ]($style)'
+[cmd_duration]
+style = "#f9a600"
+format = "[](fg:black bg:#f9a600)[祥$duration](bg:$style fg:black)[](fg:$style)"
 
-[git_status]
-disabled = false
-# ahead = " $count "
-# behind = " $count "
-# deleted = "﫧 $count "
-# diverged = " $count "
-# stashed = " $count "
-# modified = " $count "
-# staged = " $count "
-# renamed = " $count "
-# untracked = " $count "
-style = "bg:bg2 fg:text"
-format = '[($all_status$ahead_behind)]($style)'
-
-[conda]
-symbol = ""
-style = "bg:bg4 fg:text"
-format = '[ $symbol ($environment) ]($style)'
-ignore_base = false
+[directory]
+style = "#c05303"
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+format = "[](fg:black bg:#c05303)[$path[$read_only](bg:$style fg:black)](bg:$style fg:black)[](fg:$style)"
+read_only = " "
 
 [docker_context]
-symbol = ""
-style = "bg:bg4 fg:text"
-format = '[ $symbol ($context) ]($style)'
+style = "fg:black bg:#eb9606"
+symbol = "🐳  "
+format = "[](fg:black bg:#eb9606)[$symbol$context]($style)[](fg:#eb9606)"
 
-[pixi]
-style = "bg:bg4 fg:text"
-format = '[ $symbol ($version) ($environment) ]($style)'
+[git_branch]
+style = "#d8712c"
+format = "[](fg:black bg:$style)[ $symbol$branch](fg:black bg:$style)[](fg:$style)"
 
-[c]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+[git_commit]
+style = "#d8712c"
+format = "\b[ ](bg:$style)[\\($hash$tag\\)](fg:black bg:$style)[](fg:$style)"
 
-[cpp]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+[git_state]
+style = "#d8712c"
+format = "\b[ ](bg:$style)[ \\($state( $progress_current/$progress_total)\\)](fg:black bg:$style)[](fg:$style)"
 
-[elixir]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+[git_status]
+style = "#d8712c"
+format = "(\b[ ](bg:$style fg:black)$conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind[](fg:$style))"
+conflicted = "[ ](bold fg:88 bg:#d8712c)[  ${count} ](fg:black bg:#d8712c)"
+staged = "[ $count ](fg:black bg:#d8712c)"
+modified = "[ ${count} ](fg:black bg:#d8712c)"
+renamed = "[ ${count} ](fg:black bg:#d8712c)"
+deleted = "[ ${count} ](fg:black bg:#d8712c)"
+untracked = "[?${count} ](fg:black bg:#d8712c)"
+stashed = "[ ${count} ](fg:black bg:#d8712c)"
+ahead = "[ ${count} ](fg:#523333 bg:#d8712c)"
+behind = "[ ${count} ](fg:black bg:#d8712c)"
+diverged = "[ ](fg:88 bg:#d8712c)[ נּ ](fg:black bg:#d8712c)[ ${ahead_count} ](fg:black bg:#d8712c)[ ${behind_count} ](fg:black bg:#d8712c)"
 
 [golang]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = "ﳑ "
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
 
-[gradle]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
-
-[haskell]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+[helm]
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol($version)]($style)[](fg:#eb9606)"
 
 [java]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
 
 [kotlin]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
+
+[kubernetes]
+format = "[](fg:black bg:#ad4007)[$symbol$context](fg:black bg:#ad4007)[](fg:#ad4007)"
+disabled = false
+
+#[memory_usage]
+#style = "#f9a600"
+#symbol = " "
+#format = "[](fg:black bg:#f9a600)[$symbol$ram](bg:$style fg:black)[](fg:$style)"
+#threshold = 95
+#disabled = false
 
 [nodejs]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+style = "green"
+format = "[](fg:black bg:#eb9606)[$symbol($version)](fg:black bg:#eb9606)[](fg:#eb9606)"
 
-[nim]
-symbol = "󰆥"
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+[ocaml]
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
+
+[package]
+disabled = true
 
 [php]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
 
 [python]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$pyenv_prefix$version$virtualenv]($style)[](fg:#eb9606)"
+
+[ruby]
+symbol = " "
+format = "[](fg:black bg:#eb9606)[$symbol$version](fg:black bg:#eb9606)(fg:black bg:#eb9606)[](fg:#eb9606)"
 
 [rust]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
 
 [scala]
-symbol = ""
-style = "bg:bg3 fg:text"
-format = '[ $symbol ($version) ]($style)'
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
 
-[palettes.pastel]
-bg0 = '90'
-bg1 = '168'
-bg2 = '216'
-bg3 = '110'
-bg4 = '30'
-bg5 = '24'
-text = '231'
-lavender = '147'
-red = '161'
-yellow = '222'
-green = '77'
-white = '231'
-gray = '242'
-black = '16'
+[swift]
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"
 
-[palettes.pastel_brite]
-bg0 = '183'
-bg1 = '211'
-bg2 = '216'
-bg3 = '111'
-bg4 = '116'
-bg5 = '74'
-text = '16'
-lavender = '147'
-red = '161'
-yellow = '222'
-green = '77'
-white = '231'
-gray = '242'
-black = '16'
+[shell]
+fish_indicator = ""
+bash_indicator = "bash "
+zsh_indicator = "zsh "
+powershell_indicator = ""
+format = "[$indicator](fg:#ad4007)"
+disabled = false
+[shlvl]
+symbol = " "
+style = "fg:black bg:#ad4007"
+format = "[](fg:black bg:#ad4007)[$symbol$shlvl]($style)[](fg:#ad4007)"
+disabled = false
 
-[palettes.catppuccin_mocha]
-bg0 = '211'
-bg1 = '216'
-bg2 = '223'
-bg3 = '151'
-bg4 = '117'
-bg5 = '147'
-text = '16'
-lavender = '147'
-red = '161'
-yellow = '222'
-green = '77'
-white = '231'
-gray = '242'
-black = '16'
+[terraform]
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$workspace]($style)[](fg:#eb9606)"
+
+[username]
+style_user = "#0370C0"
+style_root = "#C00311"
+format = "[](fg:black bg:$style)[$user](fg:black bg:$style)[](fg:$style)"
+
+[vagrant]
+style = "fg:black bg:#eb9606"
+format = "[](fg:black bg:#eb9606)[$symbol$version]($style)[](fg:#eb9606)"

@@ -1,12 +1,11 @@
 format = """
 [](fg:#7aa2f7)\
 $os\
-[ ](fg:#7aa2f7 bg:#1a1b26)\
+[ ](fg:#7aa2f7)\
 $directory\
 $git_branch\
 $git_status\
 $git_metrics\
-[](fg:#1a1b26)\
 $conda\
 $python\
 $fill\
@@ -32,20 +31,20 @@ truncation_length = 6
 truncation_symbol = ' ' # nf-fa-folder_open
 truncate_to_repo = false
 home_symbol = ' ~' # nf-fa-home
-style = 'fg:#7aa2f7 bg:#1a1b26'
+style = 'fg:#7aa2f7'
 read_only = ' 󰌾 ' # nf-md-lock
-read_only_style = 'fg:#f7768e bg:#1a1b26'
+read_only_style = 'fg:#f7768e'
 format = '[$path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 symbol = '  ' # nf-fa-github_alt, nf-fa-code_fork
 truncation_length = 4
 truncation_symbol = ''
-style = 'fg:#7aa2f7 bg:#1a1b26'
+style = 'fg:#7aa2f7'
 format = '[  $symbol$branch(:$remote_branch)]($style)' # nf-pl-left_soft_divider
 
 [git_status]
-style = 'fg:#e0af68 bg:#1a1b26'
+style = 'fg:#e0af68'
 conflicted = '='
 ahead = '⇡${count}'
 behind = '⇣${count}'
@@ -59,8 +58,8 @@ deleted = '✘'
 format = '([\[$all_status$ahead_behind\]]($style))'
 
 [git_metrics]
-added_style = 'fg:#9ece6a bg:#1a1b26'
-deleted_style = 'fg:#9ece6a bg:#1a1b26'
+added_style = 'fg:#9ece6a'
+deleted_style = 'fg:#9ece6a'
 format = '[+$added/-$deleted]($deleted_style)'
 disabled = false
 
@@ -70,7 +69,7 @@ style = 'blue'
 
 [conda]
 symbol = ' ' # nf-dev-python
-style = 'fg:#9ece6a bg:#1a1b26'
+style = 'fg:#9ece6a'
 format = '[ $symbol$environment ]($style)'
 ignore_base = false
 
@@ -78,7 +77,7 @@ ignore_base = false
 symbol = ' ' # nf-dev-python
 format = '[ ${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
 pyenv_version_name = false
-style = 'fg:#1a1b26 bg:#9ece6a'
+style = 'fg:#1a1b26'
 
 [character]
 success_symbol = '[❯](bold #9ece6a)'

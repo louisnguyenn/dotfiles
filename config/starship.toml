@@ -30,17 +30,16 @@ Debian = "  " # nf-linux-debian
 truncation_length = 6
 truncation_symbol = ' ' # nf-fa-folder_open
 truncate_to_repo = false
-home_symbol = ' ~' # nf-fa-home
 style = 'fg:#7aa2f7'
 read_only = ' 󰌾 ' # nf-md-lock
 read_only_style = 'fg:#f7768e'
 format = '[$path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
-symbol = '  ' # nf-fa-github_alt, nf-fa-code_fork
+symbol = ' ' # nf-fa-github_alt, nf-fa-code_fork
+style = 'fg:#7aa2f7'
 truncation_length = 4
 truncation_symbol = ''
-style = 'fg:#7aa2f7'
 format = '[  $symbol$branch(:$remote_branch)]($style)' # nf-pl-left_soft_divider
 
 [git_status]

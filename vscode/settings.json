@@ -1,62 +1,47 @@
 {
-  "security.workspace.trust.untrustedFiles": "open",
-  "code-runner.runInTerminal": true,
-  "files.autoSave": "afterDelay",
-  "dart.flutterSdkPath": "C:\\Users\\louis\\Downloads\\flutter",
-  "git.autofetch": true,
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    },
-    "Ubuntu (WSL)": {
-      "path": "C:\\WINDOWS\\System32\\wsl.exe",
-      "args": ["-d", "Ubuntu", "--login", "-c", "zsh"]
-    }
-  },
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  // editor settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.sortImports": "explicit",
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[json]": {
-    "editor.tabSize": 2
-  },
-  "terminal.integrated.defaultProfile.linux": "zsh",
+  "editor.linkedEditing": true,
+  "editor.tabSize": 4,
+  "editor.fontSize": 13,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "phase",
   "editor.wordWrap": "on",
+
+  // language formatting
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+  },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+  },
+  "javascript.preferences.quoteStyle": "double",
+  "javascript.suggest.paths": false,
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.suggest.paths": false,
+
+  // prettier config
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
@@ -64,29 +49,64 @@
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": false,
   "prettier.trailingComma": "es5",
-  "prettier.proseWrap": "always",
-  "prettier.singleAttributePerLine": true,
-  "javascript.preferences.quoteStyle": "double",
-  "typescript.preferences.quoteStyle": "double",
-  "editor.tabSize": 4,
-  "editor.fontSize": 13,
+  "prettier.bracketSpacing": true,
+  "prettier.endOfLine": "lf",
+  "prettier.arrowParens": "always",
+  "prettier.proseWrap": "preserve",
+
+  // terminal config
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe",
+      ],
+      "args": [],
+      "icon": "terminal-cmd",
+    },
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": ["--login", "-i"],
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu", "--login", "-c", "zsh"],
+    },
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.startupEditor": "none",
+  "window.commandCenter": false,
+  "window.restoreWindows": "none",
+  "workbench.tips.enabled": false,
   "breadcrumbs.enabled": false,
+  "explorer.compactFolders": false,
+
+  // other
+  "files.autoSave": "afterDelay",
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.autofetch": true,
+  "code-runner.runInTerminal": true,
+  "dart.flutterSdkPath": "C:\\Users\\louis\\Downloads\\flutter",
   "remote.SSH.remotePlatform": {
-    "linux.socs.uoguelph.ca": "linux"
+    "linux.socs.uoguelph.ca": "linux",
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.sortImports": "explicit"
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "c": false,
+    "typescriptreact": false,
+    "javascript": false,
   },
-  "editor.linkedEditing": true,
-  "typescript.suggest.paths": false,
-  "javascript.suggest.paths": false,
-  "workbench.colorTheme": "Kitty VSCode Theme",
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "workbench.iconTheme": "a-file-icon-vscode",
-  "workbench.productIconTheme": "material-product-icons",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
-  "terminal.integrated.fontSize": 13
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "Andromeda Night Operator",
 }
